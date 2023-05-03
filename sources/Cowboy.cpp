@@ -1,11 +1,11 @@
 #include "Cowboy.hpp"
 
 namespace ariel{
-    Cowboy::Cowboy(string name, Point& location):Character(name,location){
+    Cowboy::Cowboy(string name, const Point& location):Character(name,location){
 
     }
 
-    void Cowboy::shoot(Character& character){
+    void Cowboy::shoot(Character* character){
 
     }
 
@@ -19,6 +19,10 @@ namespace ariel{
 
     Cowboy::~Cowboy(){
         
+    }
+
+    int Cowboy::getAmountOfBalls(){
+        return this->amount_of_balls;
     }
 
 

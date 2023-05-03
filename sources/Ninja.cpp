@@ -3,16 +3,20 @@
 namespace ariel
 {
 
-    Ninja::Ninja(string name, Point& location):Character(name,location){
+    Ninja::Ninja(string name, const Point& location):Character(name,location){
 
     }
 
-    void Ninja::move(Character& character){
+    void Ninja::move(Character* character){
 
     }
 
-    void Ninja::slash(Character& character){
+    void Ninja::slash(Character* character){
         
+    }
+
+    int Ninja::getSpeed(){
+        return 0;
     }
 
 

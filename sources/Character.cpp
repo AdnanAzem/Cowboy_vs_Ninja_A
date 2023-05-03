@@ -5,7 +5,7 @@ namespace ariel{
 
     }
 
-    Character::Character(string name, Point& location):name(name),location(location){
+    Character::Character(string name, const Point& location):name(name),location(location){
 
     }
 
@@ -30,12 +30,16 @@ namespace ariel{
 
     }
 
-    void Character::print(){
-
+    string Character::print(){
+        return "Character";
     }
 
     Character::~Character(){
         
+    }
+
+    int Character::getHealth(){
+        return 0;
     }
 
 }

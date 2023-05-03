@@ -1,3 +1,4 @@
+#pragma once
 #include "Character.hpp"
 
 namespace ariel
@@ -6,19 +7,16 @@ namespace ariel
     {
     private:
         int speed;
+        
     public:
-        Ninja(string, Point&);
+        Ninja(string, const Point&);
 
-        void move (Character&);
-        void slash (Character&);
-
-
+        void move (Character*);
+        void slash (Character*);
+        int getSpeed();
         
     };
-    
-
-    
-    
+      
 } 
 
 

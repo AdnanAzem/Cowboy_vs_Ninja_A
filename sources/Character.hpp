@@ -1,3 +1,4 @@
+#pragma once
 #include "Point.hpp"
 
 namespace ariel{
@@ -8,17 +9,15 @@ namespace ariel{
             int health;
         public:
             Character();
-            Character(string , Point&);
-
-
+            Character(string , const Point&);
 
             bool isAlive();
             double distance (const Point&);
-            void hit(int);
+            int getHealth();
+            virtual void hit(int);
             string getName();
             Point getLocation();
-            void print();
+            virtual string print();
             ~Character();
-
     };
 }

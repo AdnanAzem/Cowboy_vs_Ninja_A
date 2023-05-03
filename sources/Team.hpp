@@ -17,10 +17,10 @@ namespace ariel{
             int teamSizeMax;
 
         public:
-            Team(Character&);
-            // Team(Character);
-            void add(Character&);
-            void attack(Character);
+            Team(Character*);
+//             // Team(Character);
+            void add(Character*);
+            void attack(Team*);
             int stillAlive();
             void print();
             ~Team();

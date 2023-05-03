@@ -2,7 +2,7 @@
 
 namespace ariel{
 
-    Team::Team(Character& leader){
+    Team::Team(Character* leader){
 
     }
 
@@ -10,11 +10,11 @@ namespace ariel{
 
     // }
 
-    void Team::add(Character& character){
+    void Team::add(Character* character){
 
     }
 
-    void Team::attack(Character enemy){
+    void Team::attack(Team* enemyTeam){
 
     }
 

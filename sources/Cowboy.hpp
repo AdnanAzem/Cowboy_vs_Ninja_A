@@ -8,12 +8,12 @@ namespace ariel{
             int amount_of_balls;
 
         public:
-            Cowboy(string , Point& );
-            void shoot(Character&);
+            Cowboy(string , const Point&);
+            void shoot(Character*);
             bool hasboolets();
             void reload();
+            int getAmountOfBalls();
             ~Cowboy();
-
     };
 
 }

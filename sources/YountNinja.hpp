@@ -1,3 +1,4 @@
+#pragma once
 #include "Ninja.hpp"
 
 namespace ariel{
@@ -5,7 +6,7 @@ namespace ariel{
         private:
 
         public:
-            YountNinja(string,Point&);
+            YountNinja(string , const Point&);
             ~YountNinja();
 
     };
