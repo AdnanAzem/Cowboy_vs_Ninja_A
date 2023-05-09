@@ -23,11 +23,11 @@ namespace ariel{
             vector<Character> getTeam();
 
 
-            void add(Character*);
-            void attack(Team*);
-            int stillAlive();
-            void print();
-            ~Team();
+            void add(Character*); // add character to the team
+            void attack(Team*); // attack other team -- check if the leader is alive else pick another leader(by smallest distance)
+            int stillAlive(); // return the number of the members that still alive in the team
+            void print(); // print the details of the members in the team
+            ~Team(); // free the memory
 
     };
 

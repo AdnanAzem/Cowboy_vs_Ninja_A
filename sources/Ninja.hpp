@@ -11,9 +11,11 @@ namespace ariel
     public:
         Ninja(string, const Point&);
 
-        void move (Character*);
-        void slash (Character*);
-        int getSpeed();
+        void setSpeed(int);
+
+        void move (Character*); // move to other character -- distance = speed of ninja
+        void slash (Character*); // if the enemy is alive & distance < 1 reduce 13 health from the enemy
+        int getSpeed(); // return the speed
         
     };
       

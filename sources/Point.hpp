@@ -12,9 +12,9 @@ namespace ariel{
             Point();
             Point(double, double);
 
-            double distance(const Point&);
-            void print();
-            Point moveTowards(const Point&, const Point&, double);
+            double distance(const Point&); // return the distance between 2 points
+            void print(); // print the point example: (2,2)
+            Point moveTowards(const Point&, const Point&, double); // return the closest point 
 
     };
 }

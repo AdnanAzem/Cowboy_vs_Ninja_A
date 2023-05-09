@@ -25,5 +25,7 @@ namespace ariel{
         return this->amount_of_balls;
     }
 
+    
+
 
 }

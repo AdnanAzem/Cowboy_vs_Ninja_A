@@ -11,13 +11,19 @@ namespace ariel{
             Character();
             Character(string , const Point&);
 
-            bool isAlive();
-            double distance (const Point&);
-            int getHealth();
-            virtual void hit(int);
-            string getName();
-            Point getLocation();
-            virtual string print();
+            // Setters
+            void setHealth(int);
+
+            // Getters
+            string getName(); // return the name of the character
+            int getHealth(); // return the health of the character
+            Point getLocation(); // return the location of the character
+
+
+            bool isAlive(); // return if the character is alive -- health > 0
+            double distance (const Point&); // return the distance between 2 characters
+            virtual void hit(int); // reduce the health of the character
+            virtual string print(); // print: name, health, location, isAlive() --> no print healt & (name), before the name print N | C
             ~Character();
     };
 }

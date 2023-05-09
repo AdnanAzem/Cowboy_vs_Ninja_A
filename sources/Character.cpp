@@ -42,4 +42,8 @@ namespace ariel{
         return 0;
     }
 
+    void Character::setHealth(int health){
+        this->health = health;
+    }
+
 }
