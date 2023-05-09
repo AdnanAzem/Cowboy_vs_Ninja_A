@@ -10,7 +10,7 @@ namespace ariel{
             enemy->setHealth(enemy->getHealth()-10);
         }
         else{
-            throw("The Enemy is not alive!!!");
+            // throw("The Enemy is not alive!!!");
         }
 
     }
@@ -24,7 +24,7 @@ namespace ariel{
             amount_of_balls = 6;
         }
         else{
-            throw ("{" + this->getName() + "}" + "is not alive!!!");
+            // throw ("{" + this->getName() + "}" + "is not alive!!!");
         }
 
     }

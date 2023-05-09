@@ -32,5 +32,9 @@ namespace ariel{
             return Point(coordinate_x + dx, coordinate_y + dy);
         }
     }
+
+    string Point::toString(){
+        return "(" + to_string(coordinate_x) + ", " + to_string(coordinate_y) + ")" ;
+    }
     
 }

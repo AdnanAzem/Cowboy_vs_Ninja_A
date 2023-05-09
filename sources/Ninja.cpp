@@ -16,7 +16,7 @@ namespace ariel
             enemy->setHealth(enemy->getHealth() - 13);
         }
         else{
-            throw ("Enemy is not alive!!!");
+            // throw ("Enemy is not alive!!!");
         }
     }
 
@@ -28,14 +28,14 @@ namespace ariel
         this->speed = speed;
     }
 
-    string Character::print() {
-    if(this->isAlive()){
-            return "N ==>> Name: " + this->getName() + ", Health: " + to_string(this->getHealth()) + ", Location: " + this->getLocation().toString();
-        }
-        else{
-            return "{" + this->getName() + "}";
-        }
-    }
+    // string Character::print() {
+    // if(this->isAlive()){
+    //         return "N ==>> Name: " + this->getName() + ", Health: " + to_string(this->getHealth()) + ", Location: " + this->getLocation().toString();
+    //     }
+    //     else{
+    //         return "{" + this->getName() + "}";
+    //     }
+    // }
 
 
     
