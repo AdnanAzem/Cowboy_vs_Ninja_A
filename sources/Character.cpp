@@ -10,15 +10,15 @@ namespace ariel{
     }
 
     bool Character::isAlive(){
-        return true;
+        return this->getHealth() > 0;
     }
 
     double Character::distance (const Point& target){
-        return 0;
+        return this->getLocation().distance(target);
     }
 
     void Character::hit(int damage){
-
+        this->setHealth(this->getHealth() - damage);
     }
 
     string Character::getName( ){
@@ -31,19 +31,24 @@ namespace ariel{
     }
 
     string Character::print(){
-        return "Character";
-    }
-
-    Character::~Character(){
+        if(this->isAlive()){
+            return "Name: " + this->getName() + ", Health: " + to_string(this->getHealth()) + ", Location: " + this->getLocation().toString();
+        }
+        else{
+            return "{" + this->getName() + "}";
+        }
         
     }
 
     int Character::getHealth(){
-        return 0;
+        return this->health;
     }
 
     void Character::setHealth(int health){
         this->health = health;
     }
 
+    Character::~Character(){
+        
+    }
 }

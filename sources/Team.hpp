@@ -12,7 +12,9 @@ using namespace std;
 namespace ariel{
     class Team{
         private:
-            vector<Character> team;
+            // the order : 1) cowboy |-->>  2) ninja
+            // max members in the team is 10
+            vector<Character> members;
             int teamSize;
             int teamSizeMax;
 
@@ -21,7 +23,6 @@ namespace ariel{
 
             //getters
             vector<Character> getTeam();
-
 
             void add(Character*); // add character to the team
             void attack(Team*); // attack other team -- check if the leader is alive else pick another leader(by smallest distance)

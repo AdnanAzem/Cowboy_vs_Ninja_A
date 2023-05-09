@@ -14,6 +14,7 @@ namespace ariel{
 
             double distance(const Point&); // return the distance between 2 points
             void print(); // print the point example: (2,2)
+            string toString();
             Point moveTowards(const Point&, const Point&, double); // return the closest point 
 
     };

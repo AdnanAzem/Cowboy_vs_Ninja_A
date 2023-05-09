@@ -16,6 +16,7 @@ namespace ariel
         void move (Character*); // move to other character -- distance = speed of ninja
         void slash (Character*); // if the enemy is alive & distance < 1 reduce 13 health from the enemy
         int getSpeed(); // return the speed
+        // string print();
         
     };
       

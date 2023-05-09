@@ -147,5 +147,27 @@ TEST_CASE("Cowboy vs Ninja"){
     CHECK_NOTHROW(cowboy->isAlive());
 }
 
+TEST_CASE("Throwing errors when the cowboy is dead"){
+    Cowboy *cowboy = new Cowboy("Tom", Point(0,0));
+    if(!cowboy->isAlive()){
+        // can't reload the weapon
+        CHECK_THROWS(cowboy->reload());
+        // can't shoot
+        CHECK_THROWS(cowboy->shoot(new Ninja("sakura",Point(4,2))));
+        // can't hit
+        CHECK_THROWS(cowboy->hit(4));
+    }
+}
 
+TEST_CASE("Throwing errors when the ninja is dead"){
+    Ninja *ninja = new Ninja("Tom", Point(0,0));
+    if(!ninja->isAlive()){
+        // can't move
+        CHECK_THROWS(ninja->move(new Cowboy("Tom",Point(9,9))));
+        // can't slash
+        CHECK_THROWS(ninja->slash(new Cowboy("Tom",Point(9,9))));
+        // can't hit
+        CHECK_THROWS(ninja->hit(7));
+    }
+}
 
