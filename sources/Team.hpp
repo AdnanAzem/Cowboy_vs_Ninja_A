@@ -18,7 +18,11 @@ namespace ariel{
 
         public:
             Team(Character*);
-//             // Team(Character);
+
+            //getters
+            vector<Character> getTeam();
+
+
             void add(Character*);
             void attack(Team*);
             int stillAlive();
