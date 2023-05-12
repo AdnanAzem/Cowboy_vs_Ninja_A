@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>
 #include "Point.hpp"
 #include "Character.hpp"
@@ -19,6 +20,7 @@ namespace ariel{
             int teamSizeMax;
 
         public:
+            Team();
             Team(Character*);
 
             //getters

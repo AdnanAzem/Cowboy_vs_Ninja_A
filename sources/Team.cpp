@@ -2,6 +2,10 @@
 
 namespace ariel{
 
+    Team::Team(){
+        
+    }
+
     Team::Team(Character* leader){
 
     }
