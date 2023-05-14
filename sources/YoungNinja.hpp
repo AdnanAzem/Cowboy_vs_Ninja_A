@@ -2,13 +2,13 @@
 #include "Ninja.hpp"
 
 namespace ariel{
-    class YountNinja : public Ninja{
+    class YoungNinja : public Ninja{
         private:
             // health = 100, speed = 14
 
         public:
-            YountNinja(string , const Point&);
-            ~YountNinja();
+            YoungNinja(string , const Point&);
+            ~YoungNinja();
 
     };
 }

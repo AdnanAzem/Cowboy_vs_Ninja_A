@@ -9,7 +9,7 @@ using namespace ariel;
 
 TEST_CASE("Check Young Ninja Stats"){
     Point p(2,2);
-    YountNinja *ninja = new YountNinja("sakura",Point(2,2));
+    YoungNinja *ninja = new YoungNinja("sakura",Point(2,2));
     // The speed of Young ninja should be 14.
     CHECK(ninja->getSpeed() == 14);
     // The health of Young ninja should be 100.
@@ -127,7 +127,7 @@ TEST_CASE("Throwing errors when the ninja is dead and use functions"){
 }
 
 TEST_CASE("Throwing errors when the young ninja is dead and use functions"){
-    YountNinja *ninja = new YountNinja("Sakura", Point(0,0));
+    YoungNinja *ninja = new YoungNinja("Sakura", Point(0,0));
     if(!ninja->isAlive()){
         // can't move
         CHECK_THROWS(ninja->move(new Cowboy("Tom",Point(9,9))));
@@ -165,7 +165,7 @@ TEST_CASE("Throwing errors when the old ninja is dead and use functions"){
 TEST_CASE("Adding Characters to the team"){
     Point p(2,2);
     Cowboy *c1 = new Cowboy("Tom", p);
-    YountNinja *c2 = new YountNinja("Tom", p);
+    YoungNinja *c2 = new YoungNinja("Tom", p);
     TrainedNinja *c3 = new TrainedNinja("Tom", p);
     OldNinja *c4 = new OldNinja("Tom", p);
     Ninja *c5 = new Ninja("Tom", p);
@@ -177,7 +177,7 @@ TEST_CASE("Adding Characters to the team"){
     CHECK_NOTHROW(team_A.add(c5));
 
     CHECK(typeid(&team_A.getTeam()[0]) == typeid(Cowboy));
-    CHECK(typeid(&team_A.getTeam()[1]) == typeid(YountNinja));
+    CHECK(typeid(&team_A.getTeam()[1]) == typeid(YoungNinja));
     CHECK(typeid(&team_A.getTeam()[2]) == typeid(TrainedNinja));
     CHECK(typeid(&team_A.getTeam()[3]) == typeid(OldNinja));
     CHECK(typeid(&team_A.getTeam()[4]) == typeid(Ninja));
@@ -224,7 +224,7 @@ TEST_CASE("Adding Character to SmartTeam that is full should throw exception"){
 
 TEST_CASE("Team vs Team"){
     Team team_A(new Cowboy("Tom", Point(1,19))); 
-    Team team_B(new YountNinja("sushi", Point(54,-22))); 
+    Team team_B(new YoungNinja("sushi", Point(54,-22))); 
     for (size_t i = 1; i < 9; i++)
     {
         Cowboy *c = new Cowboy(to_string(i), Point(1,19));
@@ -233,7 +233,7 @@ TEST_CASE("Team vs Team"){
 
     for (size_t i = 1; i < 9; i++)
     {
-        YountNinja *n = new YountNinja(to_string(i), Point(54,-22));
+        YoungNinja *n = new YoungNinja(to_string(i), Point(54,-22));
         CHECK_NOTHROW(team_A.add(n));
     }
     // when team attacks himself should not throw error
@@ -244,7 +244,7 @@ TEST_CASE("Team vs Team"){
 
 TEST_CASE("Team vs Team2"){
     Team team_A(new Cowboy("Tom", Point(1,19))); 
-    Team2 team_B(new YountNinja("sushi", Point(54,-22))); 
+    Team2 team_B(new YoungNinja("sushi", Point(54,-22))); 
     for (size_t i = 1; i < 9; i++)
     {
         Cowboy *c = new Cowboy(to_string(i), Point(1,19));
@@ -253,7 +253,7 @@ TEST_CASE("Team vs Team2"){
 
     for (size_t i = 1; i < 9; i++)
     {
-        YountNinja *n = new YountNinja(to_string(i), Point(54,-22));
+        YoungNinja *n = new YoungNinja(to_string(i), Point(54,-22));
         CHECK_NOTHROW(team_A.add(n));
     }
     // when team attacks himself should not throw error
@@ -264,7 +264,7 @@ TEST_CASE("Team vs Team2"){
 
 TEST_CASE("Team vs SmartTeam"){
     Team team_A(new Cowboy("Tom", Point(1,19))); 
-    SmartTeam team_B(new YountNinja("sushi", Point(54,-22))); 
+    SmartTeam team_B(new YoungNinja("sushi", Point(54,-22))); 
     for (size_t i = 1; i < 9; i++)
     {
         Cowboy *c = new Cowboy(to_string(i), Point(1,19));
@@ -273,7 +273,7 @@ TEST_CASE("Team vs SmartTeam"){
 
     for (size_t i = 1; i < 9; i++)
     {
-        YountNinja *n = new YountNinja(to_string(i), Point(54,-22));
+        YoungNinja *n = new YoungNinja(to_string(i), Point(54,-22));
         CHECK_NOTHROW(team_A.add(n));
     }
     // when team attacks himself should not throw error
@@ -284,7 +284,7 @@ TEST_CASE("Team vs SmartTeam"){
 
 TEST_CASE("Team2 vs Team2"){
     Team2 team_A(new Cowboy("Tom", Point(1,19))); 
-    Team2 team_B(new YountNinja("sushi", Point(54,-22))); 
+    Team2 team_B(new YoungNinja("sushi", Point(54,-22))); 
     for (size_t i = 1; i < 9; i++)
     {
         Cowboy *c = new Cowboy(to_string(i), Point(1,19));
@@ -293,7 +293,7 @@ TEST_CASE("Team2 vs Team2"){
 
     for (size_t i = 1; i < 9; i++)
     {
-        YountNinja *n = new YountNinja(to_string(i), Point(54,-22));
+        YoungNinja *n = new YoungNinja(to_string(i), Point(54,-22));
         CHECK_NOTHROW(team_A.add(n));
     }
     // when team attacks himself should not throw error
@@ -304,7 +304,7 @@ TEST_CASE("Team2 vs Team2"){
 
 TEST_CASE("Team2 vs SmartTeam"){
     Team2 team_A(new Cowboy("Tom", Point(1,19))); 
-    SmartTeam team_B(new YountNinja("sushi", Point(54,-22))); 
+    SmartTeam team_B(new YoungNinja("sushi", Point(54,-22))); 
     for (size_t i = 1; i < 9; i++)
     {
         Cowboy *c = new Cowboy(to_string(i), Point(1,19));
@@ -313,7 +313,7 @@ TEST_CASE("Team2 vs SmartTeam"){
 
     for (size_t i = 1; i < 9; i++)
     {
-        YountNinja *n = new YountNinja(to_string(i), Point(54,-22));
+        YoungNinja *n = new YoungNinja(to_string(i), Point(54,-22));
         CHECK_NOTHROW(team_A.add(n));
     }
     // when team attacks himself should not throw error
@@ -324,7 +324,7 @@ TEST_CASE("Team2 vs SmartTeam"){
 
 TEST_CASE("SmartTeam vs SmartTeam"){
     SmartTeam team_A(new Cowboy("Tom", Point(1,19))); 
-    SmartTeam team_B(new YountNinja("sushi", Point(54,-22))); 
+    SmartTeam team_B(new YoungNinja("sushi", Point(54,-22))); 
     for (size_t i = 1; i < 9; i++)
     {
         Cowboy *c = new Cowboy(to_string(i), Point(1,19));
@@ -333,7 +333,7 @@ TEST_CASE("SmartTeam vs SmartTeam"){
 
     for (size_t i = 1; i < 9; i++)
     {
-        YountNinja *n = new YountNinja(to_string(i), Point(54,-22));
+        YoungNinja *n = new YoungNinja(to_string(i), Point(54,-22));
         CHECK_NOTHROW(team_A.add(n));
     }
     // when team attacks himself should not throw error
