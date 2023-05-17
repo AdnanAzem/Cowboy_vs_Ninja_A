@@ -6,7 +6,4 @@ namespace ariel{
         this->setSpeed(14);
     }
 
-    YoungNinja::~YoungNinja(){
-        
-    }
 }

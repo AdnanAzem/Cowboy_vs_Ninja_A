@@ -1,0 +1,131 @@
+--- 0 seconds
+
+
+### Cleaning old files ###
+rm -f objects/Character.o objects/Cowboy.o objects/Ninja.o objects/OldNinja.o objects/Point.o objects/SmartTeam.o objects/Team2.o objects/Team.o objects/TrainedNinja.o objects/YoungNinja.o *.o test* demo*
+rm -f StudentTest*.cpp
+
+
+### Check 1: our demo program should compile with your class
+! timeout 20 make -j8 -f Makefile demo
+clang++-14 -std=c++2a -Werror -Wsign-conversion -Isources --compile Demo.cpp -o Demo.o
+clang++-14 -std=c++2a -Werror -Wsign-conversion -Isources --compile sources/Character.cpp -o objects/Character.o
+clang++-14 -std=c++2a -Werror -Wsign-conversion -Isources --compile sources/Cowboy.cpp -o objects/Cowboy.o
+clang++-14 -std=c++2a -Werror -Wsign-conversion -Isources --compile sources/Ninja.cpp -o objects/Ninja.o
+clang++-14 -std=c++2a -Werror -Wsign-conversion -Isources --compile sources/OldNinja.cpp -o objects/OldNinja.o
+clang++-14 -std=c++2a -Werror -Wsign-conversion -Isources --compile sources/Point.cpp -o objects/Point.o
+clang++-14 -std=c++2a -Werror -Wsign-conversion -Isources --compile sources/SmartTeam.cpp -o objects/SmartTeam.o
+clang++-14 -std=c++2a -Werror -Wsign-conversion -Isources --compile sources/Team2.cpp -o objects/Team2.o
+clang++-14 -std=c++2a -Werror -Wsign-conversion -Isources --compile sources/Team.cpp -o objects/Team.o
+clang++-14 -std=c++2a -Werror -Wsign-conversion -Isources --compile sources/TrainedNinja.cpp -o objects/TrainedNinja.o
+clang++-14 -std=c++2a -Werror -Wsign-conversion -Isources --compile sources/YoungNinja.cpp -o objects/YoungNinja.o
+clang++-14 -std=c++2a -Werror -Wsign-conversion -Isources Demo.o objects/Character.o objects/Cowboy.o objects/Ninja.o objects/OldNinja.o objects/Point.o objects/SmartTeam.o objects/Team2.o objects/Team.o objects/TrainedNinja.o objects/YoungNinja.o -o demo
+--- 4 seconds
+### Score 1: 100
+
+
+### Check 2: our demo program should run without errors
+! timeout 20 ./demo
+Name: Tom, Health: 110, Location: (32.300000, 44.000000)
+winner is team_B
+--- 4 seconds
+### Score 2: 100
+
+
+### Check 3: your test should compile 
+! timeout 20 make -j8 -f Makefile test
+clang++-14 -std=c++2a -Werror -Wsign-conversion -Isources --compile TestCounter.cpp -o TestCounter.o
+clang++-14 -std=c++2a -Werror -Wsign-conversion -Isources --compile Test.cpp -o Test.o
+clang++-14 -std=c++2a -Werror -Wsign-conversion -Isources TestCounter.o Test.o objects/Character.o objects/Cowboy.o objects/Ninja.o objects/OldNinja.o objects/Point.o objects/SmartTeam.o objects/Team2.o objects/Team.o objects/TrainedNinja.o objects/YoungNinja.o -o test
+--- 9 seconds
+### Score 3: 100
+
+
+### Check 4: you should write some new tests
+! timeout 20 ./test
+[doctest] doctest version is "2.4.11"
+[doctest] run with "--help" for options
+===============================================================================
+Test.cpp:58:
+TEST CASE:  Cowbow coudn't hit himself
+
+Test.cpp:61: ERROR: CHECK_THROWS( cowboy->shoot(cowboy) ) did NOT throw at all!
+
+===============================================================================
+Test.cpp:165:
+TEST CASE:  Adding Characters to the team
+
+Test.cpp:179: ERROR: CHECK( typeid(&team_A.getTeam()[0]) == typeid(Cowboy) ) is NOT correct!
+  values: CHECK( {?} == {?} )
+
+Test.cpp:180: ERROR: CHECK( typeid(&team_A.getTeam()[1]) == typeid(YoungNinja) ) is NOT correct!
+  values: CHECK( {?} == {?} )
+
+Test.cpp:181: ERROR: CHECK( typeid(&team_A.getTeam()[2]) == typeid(TrainedNinja) ) is NOT correct!
+  values: CHECK( {?} == {?} )
+
+Test.cpp:182: ERROR: CHECK( typeid(&team_A.getTeam()[3]) == typeid(OldNinja) ) is NOT correct!
+  values: CHECK( {?} == {?} )
+
+Test.cpp:183: ERROR: CHECK( typeid(&team_A.getTeam()[4]) == typeid(Ninja) ) is NOT correct!
+  values: CHECK( {?} == {?} )
+
+===============================================================================
+Test.cpp:186:
+TEST CASE:  Adding Character to Team that is full should throw exception
+
+Test.cpp:196: ERROR: CHECK_THROWS( team.add(new Cowboy("kuro",Point(0,0))) ) did NOT throw at all!
+
+===============================================================================
+Test.cpp:199:
+TEST CASE:  Adding Character to Team2 that is full should throw exception
+
+Test.cpp:209: ERROR: CHECK_THROWS( team.add(new Cowboy("kuro",Point(0,0))) ) did NOT throw at all!
+
+===============================================================================
+Test.cpp:212:
+TEST CASE:  Adding Character to SmartTeam that is full should throw exception
+
+Test.cpp:222: ERROR: CHECK_THROWS( team.add(new Cowboy("kuro",Point(0,0))) ) did NOT throw at all!
+
+===============================================================================
+Test.cpp:345:
+TEST CASE:  Team can't attack himself
+
+Test.cpp:353: ERROR: CHECK_THROWS( team_A.attack(&team_A) ) did NOT throw at all!
+
+===============================================================================
+Test.cpp:356:
+TEST CASE:  Team2 can't attack himself
+
+Test.cpp:364: ERROR: CHECK_THROWS( team_A.attack(&team_A) ) did NOT throw at all!
+
+===============================================================================
+Test.cpp:367:
+TEST CASE:  SmartTeam can't attack himself
+
+Test.cpp:375: ERROR: CHECK_THROWS( team_A.attack(&team_A) ) did NOT throw at all!
+
+===============================================================================
+Test.cpp:378:
+TEST CASE:  Team can't attack team that is not created
+
+Test.cpp:387: ERROR: CHECK_THROWS( team_A.attack(&team_B) ) did NOT throw at all!
+
+===============================================================================
+Test.cpp:390:
+TEST CASE:  Team2 can't attack team that is not created
+
+Test.cpp:399: ERROR: CHECK_THROWS( team_A.attack(&team_B) ) did NOT throw at all!
+
+===============================================================================
+Test.cpp:402:
+TEST CASE:  SmartTeam can't attack team that is not created
+
+Test.cpp:411: ERROR: CHECK_THROWS( team_A.attack(&team_B) ) did NOT throw at all!
+
+--- 9 seconds
+### Score 4: 100
+
+
+Grade: 100

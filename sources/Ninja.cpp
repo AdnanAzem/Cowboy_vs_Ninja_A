@@ -27,16 +27,5 @@ namespace ariel
     void Ninja::setSpeed(int speed){
         this->speed = speed;
     }
-
-    // string Character::print() {
-    // if(this->isAlive()){
-    //         return "N ==>> Name: " + this->getName() + ", Health: " + to_string(this->getHealth()) + ", Location: " + this->getLocation().toString();
-    //     }
-    //     else{
-    //         return "{" + this->getName() + "}";
-    //     }
-    // }
-
-
     
 } 

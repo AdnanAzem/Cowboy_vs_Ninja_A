@@ -20,8 +20,15 @@ namespace ariel{
             int teamSizeMax;
 
         public:
-            Team();
             Team(Character*);
+
+            // we must need to have this constructors to pass make tidy
+            Team(); 
+            Team(const Team &) = delete;
+            Team& operator =(Team const&) = delete;
+            Team(Team&&) = delete;
+            Team& operator=(Team&&) = delete;
+
 
             //getters
             vector<Character> getTeam();

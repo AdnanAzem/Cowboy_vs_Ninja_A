@@ -1,9 +1,6 @@
 #include "Character.hpp"
 
 namespace ariel{
-    Character::Character(){
-
-    }
 
     Character::Character(string name, const Point& location):name(name),location(location){
 

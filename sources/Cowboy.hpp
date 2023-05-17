@@ -14,7 +14,7 @@ namespace ariel{
             bool hasboolets(); // return if the cowboy have boolets in the weapon
             void reload(); // reload balls to the weapon 
             int getAmountOfBalls(); // return amount_of_balls
-            ~Cowboy();
+            
     };
 
 }

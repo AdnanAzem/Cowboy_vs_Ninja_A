@@ -10,10 +10,6 @@ namespace ariel{
 
     }
 
-    // Team::Team(Character leader){
-
-    // }
-
     void Team::add(Character* character){
 
     }

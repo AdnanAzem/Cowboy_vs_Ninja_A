@@ -29,10 +29,6 @@ namespace ariel{
 
     }
 
-    Cowboy::~Cowboy(){
-        
-    }
-
     int Cowboy::getAmountOfBalls(){
         return this->amount_of_balls;
     }

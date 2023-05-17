@@ -8,7 +8,6 @@ namespace ariel{
 
         public:
             OldNinja(string,const Point&);
-            ~OldNinja();
 
     };
 }

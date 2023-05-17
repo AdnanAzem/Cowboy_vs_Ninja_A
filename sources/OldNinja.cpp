@@ -7,7 +7,4 @@ namespace ariel{
         this->setSpeed(8);
     }
 
-    OldNinja::~OldNinja(){
-        
-    }
 }
